@@ -9,14 +9,14 @@ async function main(){
           labels: api.time,
           datasets: [{
             label: "Ping",
-            data: api.web,
+            data: api.ping,
             backgroundColor: "rgba(0,0,255)",
             borderColor: "rgba(0,0,255)",
             borderWidth: 1
           },
           {
             label: "Web",
-            data: api.ping,
+            data: api.web,
             backgroundColor: "rgba(0,255,0)",
             borderColor: "rgba(0,255,0)",
             borderWidth: 1
