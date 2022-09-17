@@ -19,8 +19,9 @@
           async function main(){
             const api = await fetch("https://taka.ml/api/date")
               .then(res=>res.json())
+              .catch(()=>console.log("Fetch Error"))
             const ctx = document.getElementById("status").getContext('2d');
-            const myChart = new Chart(ctx, {
+            const ping = new Chart(ctx, {
               type: "line",
                 data: {
                   labels: api.time,
