@@ -9,44 +9,51 @@ async function main(){
           labels: api.time,
           datasets: [{
             label: "Ping",
+            data: api.web,
+            backgroundColor: "rgba(0,0,255)",
+            borderColor: "rgba(0,0,255)",
+            borderWidth: 1
+          },
+          {
+            label: "Web",
             data: api.ping,
-            backgroundColor: 'rgba(0,0,255)',
-            borderColor: 'rgba(0,0,255)',
+            backgroundColor: "rgba(0,255,0)",
+            borderColor: "rgba(0,255,0)",
             borderWidth: 1
           },
           {
             label: "ユーザー",
             data: api.user,
-            backgroundColor: 'rgba(255,0,0)',
-            borderColor: 'rgba(255,0,0)',
+            backgroundColor: "rgba(255,0,0)",
+            borderColor: "rgba(255,0,0)",
             borderWidth: 1
           },
           {
             label: "サーバー",
             data: api.guild,
-            backgroundColor: 'rgba(255,255,0)',
-            borderColor: 'rgba(255,255,0)',
+            backgroundColor: "rgba(255,255,0)",
+            borderColor: "rgba(255,255,0)",
             borderWidth: 1
           },
           {
             label: "グローバルチャット",
             data: api.gc,
-            backgroundColor: 'rgba(255,128,0)',
-            borderColor: 'rgba(255,128,0)',
+            backgroundColor: "rgba(255,128,0)",
+            borderColor: "rgba(255,128,0)",
             borderWidth: 1
           },
           {
             label: "CPU",
             data: api.cpu,
-            backgroundColor: 'rgba(96,96,96)',
-            borderColor: 'rgba(96,96,96)',
+            backgroundColor: "rgba(96,96,96)",
+            borderColor: "rgba(96,96,96)",
             borderWidth: 1
           },
           {
             label: "メモリー",
             data: api.ram,
-            backgroundColor: 'rgba(0,255,255)',
-            borderColor: 'rgba(0,255,255)',
+            backgroundColor: "rgba(0,255,255)",
+            borderColor: "rgba(0,255,255)",
             borderWidth: 1
           }]
         },
@@ -56,7 +63,7 @@ async function main(){
             text: "ステータス"
           },
           legend: {
-              position: 'left',
+              position: "left",
           },
           responsive: true,
           scale: {
