@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>ステータス</title>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" integrity="sha256-+8RZJua0aEWg+QVVKg4LEzEEm/8RFez5Tb4JBNiV5xA=" crossorigin="anonymous"></script>
+      <style>
+        canvas {
+          margin: 5%;
+          padding: 5%;
+        }
+      </style>
+    </head>
+    <body>
+      <canvas id="status" width="50" height="50"></canvas>
+        <script>
+          async function main(){
+            const api = await fetch("https://taka.ml/api/date")
+              .then(res=>res.json())
+            const ctx = document.getElementById("status").getContext('2d');
+            const myChart = new Chart(ctx, {
+              type: "line",
+                data: {
+                  labels: api.time,
+                  datasets: [{
+                    label: "Ping",
+                    data: api.ping,
+                    backgroundColor: 'rgba(0,0,255)',
+                    borderColor: 'rgba(0,0,255)',
+                    borderWidth: 1
+                  },
+                  {
+                    label: "ユーザー",
+                    data: api.user,
+                    backgroundColor: 'rgba(255,0,0)',
+                    borderColor: 'rgba(255,0,0)',
+                    borderWidth: 1
+                  },
+                  {
+                    label: "サーバー",
+                    data: api.guild,
+                    backgroundColor: 'rgba(255,255,0)',
+                    borderColor: 'rgba(255,255,0)',
+                    borderWidth: 1
+                  },
+                  {
+                    label: "グローバルチャット",
+                    data: api.gc,
+                    backgroundColor: 'rgba(255,128,0)',
+                    borderColor: 'rgba(255,128,0)',
+                    borderWidth: 1
+                  },
+                  {
+                    label: "CPU",
+                    data: api.cpu,
+                    backgroundColor: 'rgba(96,96,96)',
+                    borderColor: 'rgba(96,96,96)',
+                    borderWidth: 1
+                  },
+                  {
+                    label: "メモリー",
+                    data: api.ram,
+                    backgroundColor: 'rgba(0,255,255)',
+                    borderColor: 'rgba(0,255,255)',
+                    borderWidth: 1
+                  }]
+                },
+                options: {
+                  title: {
+                    display: true,
+                    text: "ステータス"
+                  },
+                  legend: {
+                      position: 'left',
+                  },
+                  responsive: true,
+                  scale: {
+                    pointLabels: {
+                      fontSize: 15,
+                    },
+                    ticks: {
+                      stepSize: 5,
+                      beginAtZero:true,
+                      suggestedMax: 700,
+                      suggestedMin: 0,
+                    }
+                  },
+                }
+            });
+          }
+          main()
+        </script>
+    </body>
+</html>
