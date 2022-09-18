@@ -65,7 +65,6 @@ async function main(){
           legend: {
               position: "left",
           },
-          maintainAspectRatio: false,
           responsive: true,
           scale: {
             pointLabels: {
