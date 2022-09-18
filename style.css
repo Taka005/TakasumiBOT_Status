@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #000000;
-    opacity: 0.8;
+    opacity: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +14,12 @@
     user-select: none;
 }
 
-.load-text {
+.load-text-1 {
+    color: white;
+    font-size: 22pt;
+}
+
+.load-text-2 {
     color: white;
     font-size: 16pt;
 }

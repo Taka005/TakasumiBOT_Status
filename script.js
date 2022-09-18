@@ -82,6 +82,6 @@ async function main(){
   }
   
   window.setTimeout( function(){
-    document.getElementById("loader").style.visibility = "hidden";
+    document.getElementById("loading").style.visibility = "hidden";
     main()
   }, 5000 );
