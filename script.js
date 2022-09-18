@@ -84,4 +84,4 @@ async function main(){
   window.setTimeout( function(){
     document.getElementById("loader").style.visibility = "hidden";
     main()
-  }, 5000 );
+  }, 3000 );
