@@ -80,4 +80,11 @@ async function main(){
         }
     });
   }
-  main()
+  
+  window.onload = ()=>{
+    const loader = document.getElementById("loader");
+    window.setTimeout( function(){
+      loader.remove();
+      main()
+    }, 5000 );
+  }
