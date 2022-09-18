@@ -81,10 +81,7 @@ async function main(){
     });
   }
   
-  window.onload = ()=>{
-    window.setTimeout( function(){
-      const loader = document.getElementById("loader");
-      loader.remove();
-      main()
-    }, 5000 );
-  }
+  window.setTimeout( function(){
+    document.getElementById("loader").remove();
+    main()
+  }, 5000 );
