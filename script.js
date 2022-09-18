@@ -82,6 +82,6 @@ async function main(){
   }
   
   window.setTimeout( function(){
-    document.getElementById("loader").remove();
+    document.getElementById("loading").remove();
     main()
   }, 5000 );
