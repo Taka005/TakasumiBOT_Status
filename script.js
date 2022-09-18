@@ -82,8 +82,8 @@ async function main(){
   }
   
   window.onload = ()=>{
-    const loader = document.getElementById("loader");
     window.setTimeout( function(){
+      const loader = document.getElementById("loader");
       loader.remove();
       main()
     }, 5000 );
