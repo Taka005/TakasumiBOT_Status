@@ -147,7 +147,7 @@ async function main(){
         plugins: {
           title: {
             display: true,
-            text: "ユーザー、サーバー数",
+            text: "利用者数、導入数",
             font: {
               size: 20
             }
@@ -228,7 +228,7 @@ async function main(){
         plugins: {
           title: {
             display: true,
-            text: "ユーザー、サーバー数",
+            text: "リソース使用率",
             font: {
               size: 20
             }
