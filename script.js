@@ -75,7 +75,12 @@ async function main(){
           y: {
             display: true,
             suggestedMin: 100,
-            suggestedMax: 400
+            suggestedMax: 400,
+            ticks:{
+              callback: function(value, index, ticks){
+                return `${value}ms`;
+            }
+            }
           },
           ticks: {
             stepSize: 10
