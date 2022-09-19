@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #000000;
-    opacity: 0.8;
+    opacity: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +26,16 @@
     vertical-align: 10px
 }
 
+.centerp {
+    width: 60%;
+    margin: auto;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+}
+
 canvas {
-    margin: 5%;
-    padding: 5%;
+    margin: 3%;
+    padding: 3%;
 }

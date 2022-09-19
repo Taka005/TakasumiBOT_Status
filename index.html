@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,8 +39,15 @@
       <main>
         <div class="container w-75">
           <h1 class="text-center text-info my-4">ステータス</h1>
+          <p class="centerp">
+            Ping（通信速度）、サーバー数、ユーザー数、リソースの使用率を表示します。
+            <br>
+            10分ごとに更新されます。
+          </p>
         </div>
-        <canvas id="status" width="50" height="50"></canvas>
+        <canvas id="ping" width="50" height="50"></canvas>
+        <canvas id="bot" width="50" height="50"></canvas>
+        <canvas id="server" width="50" height="50"></canvas>
       </main>
       <footer class="footer">
         <div class="container text-center">
