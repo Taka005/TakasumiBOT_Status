@@ -49,9 +49,6 @@ async function main(){
             display: true,
             suggestedMin: 100,
             suggestedMax: 400,
-            callback: function(value, index, ticks){
-              return `${value}ms`;
-            }
           },
           ticks: {
             stepSize: 10
