@@ -26,32 +26,33 @@ async function main(){
         }]
       },
       options: {
-        x: {
-          type: "number",
-          easing: "linear",
-          duration: 10000 / api.time.length,
-          from: NaN,
-          delay(canvas_1){
-            if (canvas_1.type !== "data" || canvas_1.xStarted) {
-              return 0;
-            }
-            canvas_1.xStarted = true;
-            return canvas_1.index * (10000 / api.time.length);
-          }
-        },
-        y: {
-          type: "number",
-          easing: "linear",
-          duration: 10000 / api.time.length,
-          from: (canvas_1) => canvas_1.index === 0 ? canvas_1.chart.scales.y.getPixelForValue(100) : canvas_1.chart.getDatasetMeta(canvas_1.datasetIndex).data[canvas_1.index - 1].getProps(['y'], true).y,
-          delay(canvas_1){
-            if (canvas_1.type !== "data" || canvas_1.yStarted) {
-              return 0;
-            }
-            canvas_1.yStarted = true;
-            return canvas_1.index * (10000 / api.time.length);
-          }
-        },
+//        x: {
+//          type: "number",
+//          easing: "linear",
+//          duration: 10000 / api.time.length,
+//          from: NaN,
+//          delay(canvas_1){
+//            if (canvas_1.type !== "data" || canvas_1.xStarted) {
+//              return 0;
+//            }
+//            canvas_1.xStarted = true;
+//            return canvas_1.index * (10000 / api.time.length);
+//          }
+//        },
+//        y: {
+//          type: "number",
+//          easing: "linear",
+//          duration: 10000 / api.time.length,
+//          from: (canvas_1) => canvas_1.index === 0 ? canvas_1.chart.scales.y.getPixelForValue(100) : canvas_1.chart.getDatasetMeta(canvas_1.datasetIndex).data[canvas_1.index - 1].getProps(['y'], true).y,
+//          delay(canvas_1){
+//            if (canvas_1.type !== "data" || canvas_1.yStarted) {
+//              return 0;
+//            }
+//            canvas_1.yStarted = true;
+//            return canvas_1.index * (10000 / api.time.length);
+//          }
+//        },
+        
         interaction: {
           intersect: false
         },
