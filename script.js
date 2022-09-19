@@ -26,33 +26,6 @@ async function main(){
         }]
       },
       options: {
-//        x: {
-//          type: "number",
-//          easing: "linear",
-//          duration: 10000 / api.time.length,
-//          from: NaN,
-//          delay(canvas_1){
-//            if (canvas_1.type !== "data" || canvas_1.xStarted) {
-//              return 0;
-//            }
-//            canvas_1.xStarted = true;
-//            return canvas_1.index * (10000 / api.time.length);
-//          }
-//        },
-//        y: {
-//          type: "number",
-//          easing: "linear",
-//          duration: 10000 / api.time.length,
-//          from: (canvas_1) => canvas_1.index === 0 ? canvas_1.chart.scales.y.getPixelForValue(100) : canvas_1.chart.getDatasetMeta(canvas_1.datasetIndex).data[canvas_1.index - 1].getProps(['y'], true).y,
-//          delay(canvas_1){
-//            if (canvas_1.type !== "data" || canvas_1.yStarted) {
-//              return 0;
-//            }
-//            canvas_1.yStarted = true;
-//            return canvas_1.index * (10000 / api.time.length);
-//          }
-//        },
-        
         interaction: {
           intersect: false
         },
@@ -76,10 +49,8 @@ async function main(){
             display: true,
             suggestedMin: 100,
             suggestedMax: 400,
-            ticks:{
-              callback: function(value, index, ticks){
-                return `${value}ms`;
-            }
+            callback: function(value, index, ticks){
+              return `${value}ms`;
             }
           },
           ticks: {
@@ -121,32 +92,6 @@ async function main(){
         }]
       },
       options: {
-        x: {
-          type: "number",
-          easing: "linear",
-          duration: 10000 / api.time.length,
-          from: NaN,
-          delay(canvas_2){
-            if (canvas_2.type !== "data" || canvas_2.xStarted) {
-              return 0;
-            }
-            canvas_2.xStarted = true;
-            return canvas_2.index * (10000 / api.time.length);
-          }
-        },
-        y: {
-          type: "number",
-          easing: "linear",
-          duration: 10000 / api.time.length,
-          from: (canvas_2) => canvas_2.index === 0 ? canvas_2.chart.scales.y.getPixelForValue(100) : canvas_2.chart.getDatasetMeta(canvas_2.datasetIndex).data[canvas_2.index - 1].getProps(['y'], true).y,
-          delay(canvas_2){
-            if (canvas_2.type !== "data" || canvas_2.yStarted) {
-              return 0;
-            }
-            canvas_2.yStarted = true;
-            return canvas_2.index * (10000 / api.time.length);
-          }
-        },
         interaction: {
           intersect: false
         },
@@ -202,32 +147,6 @@ async function main(){
           }]
       },
       options: {
-        x: {
-          type: "number",
-          easing: "linear",
-          duration: 10000 / api.time.length,
-          from: NaN,
-          delay(canvas_3){
-            if (canvas_3.type !== "data" || canvas_3.xStarted) {
-              return 0;
-            }
-            canvas_3.xStarted = true;
-            return canvas_3.index * (10000 / api.time.length);
-          }
-        },
-        y: {
-          type: "number",
-          easing: "linear",
-          duration: 10000 / api.time.length,
-          from: (canvas_3) => canvas_3.index === 0 ? canvas_3.chart.scales.y.getPixelForValue(100) : canvas_3.chart.getDatasetMeta(canvas_3.datasetIndex).data[canvas_3.index - 1].getProps(['y'], true).y,
-          delay(canvas_3){
-            if (canvas_3.type !== "data" || canvas_3.yStarted) {
-              return 0;
-            }
-            canvas_3.yStarted = true;
-            return canvas_3.index * (10000 / api.time.length);
-          }
-        },
         interaction: {
           intersect: false
         },
