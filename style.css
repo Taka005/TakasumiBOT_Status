@@ -26,15 +26,6 @@
     vertical-align: 10px
 }
 
-.centerp {
-    width: 60%;
-    margin: auto;
-    margin-top: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-}
-
 canvas {
     margin: 3%;
     padding: 3%;
