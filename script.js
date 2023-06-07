@@ -1,7 +1,9 @@
 async function main(){
   const res = await fetch("https://api.taka.cf/v1/status")
     .then(res=>res.json())
-    .catch((err)=>console.log(`Fetch Error: ${err}`));
+    .catch(err=>console.log(`Fetch Error: ${err}`));
+ 
+  console.log(res);
 
   const time = res.data.map(data=>data.time);
   const ping = res.data.map(data=>data.ping);
