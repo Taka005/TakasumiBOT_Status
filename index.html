@@ -29,7 +29,7 @@
       <meta name="keywords" content="Discord,TakasumiBOT,Taka005">
 
       <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" integrity="sha256-+8RZJua0aEWg+QVVKg4LEzEEm/8RFez5Tb4JBNiV5xA=" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="./style.css">
     </head>
     <body class="bg-light">
       <div class="loading" id="loader">
@@ -40,15 +40,15 @@
         <div class="container w-75">
           <h1 class="text-center text-info my-4">ステータス</h1>
           <p class="text-center">
-            Ping（通信速度）、サーバー数、ユーザー数、リソースの使用率を表示します。
+            Ping（通信速度）、サーバー数、ユーザー数、リソース、その他の状態を表示します。
             <br>15分ごとに情報が更新されます。
             <br>
-            <img alt="ビルド状態" src="https://github.com/Taka005/TakasumiBOT/actions/workflows/build.yml/badge.svg">
-            <img alt="コードチェック状態" src="https://github.com/Taka005/TakasumiBOT/actions/workflows/lint.yml/badge.svg">
+            <img alt="コードチェク" src="https://github.com/Taka005/TakasumiBOTv2/actions/workflows/check.yml/badge.svg">
           </p>
         </div>
         <canvas id="ping" width="50" height="50"></canvas>
         <canvas id="bot" width="50" height="50"></canvas>
+        <canvas id="active" width="50" height="50"></canvas>
         <canvas id="server" width="50" height="50"></canvas>
       </main>
       <footer class="footer">
@@ -56,6 +56,6 @@
           <p class="text-muted">©︎2022 Taka005</p>
         </div>
       </footer>
-      <script src="script.js"></script>
+      <script src="./script.js"></script>
     </body>
 </html>

@@ -1,26 +1,27 @@
 async function main(){
-  const api = await fetch("https://api.taka.ml/v1/date")
+  const res = await fetch("https://api.taka.cf/v1/status")
     .then(res=>res.json())
-    .catch(()=>console.log("Fetch Error"))
+    .catch((err)=>console.log(`Fetch Error: ${err}`));
 
-  const canvas_1 = document.getElementById("ping").getContext('2d');
-  new Chart(canvas_1, {
+  const time = res.data.map(data=>data.time);
+  const ping = res.data.map(data=>data.ping);
+  const user = res.data.map(data=>data.user);
+  const guild = res.data.map(data=>data.guild);
+  const message = res.data.map(data=>data.message);
+  const command = res.data.map(data=>data.command);
+  const cpu = res.data.map(data=>data.cpu);
+  const ram = res.data.map(data=>data.ram);
+
+  const ping = document.getElementById("ping").getContext("2d");
+  new Chart(ping,{
     type: "line",
       data: {
-        labels: api.time,
+        labels: time,
         datasets: [{
           label: "Ping",
-          data: api.ping,
+          data: ping,
           backgroundColor: "rgba(0,0,255)",
           borderColor: "rgba(0,0,255)",
-          borderWidth: 1,
-          radius: 0,
-        },
-        {
-          label: "Web",
-          data: api.web,
-          backgroundColor: "rgba(0,255,0)",
-          borderColor: "rgba(0,255,0)",
           borderWidth: 1,
           radius: 0,
         }]
@@ -57,15 +58,15 @@ async function main(){
       }
   });
 
-  const canvas_2 = document.getElementById("bot").getContext('2d');
-  new Chart(canvas_2, {
+  const bot = document.getElementById("bot").getContext("2d");
+  new Chart(bot,{
     type: "line",
       data: {
-        labels: api.time,
+        labels: time,
         datasets: [
         {
           label: "ユーザー",
-          data: api.user,
+          data: user,
           backgroundColor: "rgba(255,0,0)",
           borderColor: "rgba(255,0,0)",
           borderWidth: 1,
@@ -73,17 +74,9 @@ async function main(){
         },
         {
           label: "サーバー",
-          data: api.guild,
+          data: guild,
           backgroundColor: "rgba(255,255,0)",
           borderColor: "rgba(255,255,0)",
-          borderWidth: 1,
-          radius: 0
-        },
-        {
-          label: "グローバルチャット",
-          data: api.gc,
-          backgroundColor: "rgba(255,128,0)",
-          borderColor: "rgba(255,128,0)",
           borderWidth: 1,
           radius: 0
         }]
@@ -120,15 +113,70 @@ async function main(){
       }
   });
 
-  const canvas_3 = document.getElementById("server").getContext('2d');
-  new Chart(canvas_3, {
+  const active = document.getElementById("active").getContext("2d");
+  new Chart(active,{
+    type: "line",
+      data: {
+        labels: time,
+        datasets: [
+        {
+          label: "メッセージ",
+          data: message,
+          backgroundColor: "rgba(255,0,0)",
+          borderColor: "rgba(255,0,0)",
+          borderWidth: 1,
+          radius: 0
+        },
+        {
+          label: "コマンド",
+          data: command,
+          backgroundColor: "rgba(255,255,0)",
+          borderColor: "rgba(255,255,0)",
+          borderWidth: 1,
+          radius: 0
+        }]
+      },
+      options: {
+        interaction: {
+          intersect: false
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: "利用状況",
+            font: {
+              size: 20
+            }
+          },
+          legend: true
+        },
+        responsive: true,
+        scale: {
+          x: {
+            display: true,
+            type: "linear"
+          },
+          y: {
+            display: true,
+            suggestedMin: 0,
+            suggestedMax: 300
+          },
+          ticks: {
+            stepSize: 10
+          }
+        },
+      }
+  });
+
+  const server = document.getElementById("server").getContext("2d");
+  new Chart(server,{
     type: "line",
       data: {
         labels: api.time,
         datasets: [
           {
             label: "CPU",
-            data: api.cpu,
+            data: cpu,
             backgroundColor: "rgba(96,96,96)",
             borderColor: "rgba(96,96,96)",
             borderWidth: 1,
@@ -136,7 +184,7 @@ async function main(){
           },
           {
             label: "メモリー",
-            data: api.ram,
+            data: ram,
             backgroundColor: "rgba(0,255,255)",
             borderColor: "rgba(0,255,255)",
             borderWidth: 1,
@@ -176,7 +224,7 @@ async function main(){
   });
 }
 
-window.setTimeout( function(){
+window.setTimeout(()=>{
   document.getElementById("loader").style.visibility = "hidden";
-  main()
-}, 3000 );
+  main();
+},3000);
