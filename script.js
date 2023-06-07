@@ -14,7 +14,7 @@ async function main(){
   const cpu = res.data.map(data=>data.cpu);
   const ram = res.data.map(data=>data.ram);
 
-  new Chart(document.getElementById("ping").getContext("2d"),{
+  new Chart(document.getElementById("ping"),{
     type: "line",
       data: {
         labels: time,
@@ -59,7 +59,7 @@ async function main(){
       }
   });
 
-  new Chart(document.getElementById("bot").getContext("2d"),{
+  new Chart(document.getElementById("bot"),{
     type: "line",
       data: {
         labels: time,
@@ -113,7 +113,7 @@ async function main(){
       }
   });
 
-  new Chart(document.getElementById("active").getContext("2d"),{
+  new Chart(document.getElementById("active"),{
     type: "line",
       data: {
         labels: time,
@@ -167,7 +167,7 @@ async function main(){
       }
   });
 
-  new Chart(document.getElementById("server").getContext("2d"),{
+  new Chart(document.getElementById("server"),{
     type: "line",
       data: {
         labels: api.time,
