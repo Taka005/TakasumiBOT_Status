@@ -5,7 +5,7 @@ async function main(){
  
   console.log(res);
 
-  const time = res.data.map(data=>data.time);
+  const time = res.data.map(data=>formatDate(new Data(data.time),"MM月dd日HH時"));
   const ping = res.data.map(data=>data.ping);
   const user = res.data.map(data=>data.user);
   const guild = res.data.map(data=>data.guild);
@@ -70,7 +70,8 @@ async function main(){
           backgroundColor: "rgba(255,0,0)",
           borderColor: "rgba(255,0,0)",
           borderWidth: 1,
-          radius: 0
+          radius: 0,
+          yAxisID: "right"
         },
         {
           label: "サーバー",
@@ -78,7 +79,8 @@ async function main(){
           backgroundColor: "rgba(255,255,0)",
           borderColor: "rgba(255,255,0)",
           borderWidth: 1,
-          radius: 0
+          radius: 0,
+          yAxisID: "left"
         }]
       },
       options: {
@@ -226,3 +228,14 @@ window.setTimeout(()=>{
   document.getElementById("loader").style.visibility = "hidden";
   main();
 },3000);
+
+function formatDate(date,format){
+  format = format.replace(/yyyy/g,date.getFullYear());
+  format = format.replace(/MM/g,((date.getMonth() + 1)).slice(-2));
+  format = format.replace(/dd/g,(date.getDate()).slice(-2));
+  format = format.replace(/HH/g,(date.getHours()).slice(-2));
+  format = format.replace(/mm/g,(date.getMinutes()).slice(-2));
+  format = format.replace(/ss/g,(date.getSeconds()).slice(-2));
+  format = format.replace(/SSS/g,(date.getMilliseconds()).slice(-3));
+  return format;
+};
