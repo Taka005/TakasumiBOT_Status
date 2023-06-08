@@ -124,7 +124,7 @@ async function main(){
                 return `${value}人`;
               }
             },
-            gridLines: {
+            grid: {
               drawOnChartArea: false,
             }
           }
@@ -175,7 +175,7 @@ async function main(){
           left: {
             position: "left",
             type: "linear",
-            max: 300,
+            suggestedMax: 300,
             min: 0,
             stepSize: 10,
             ticks: {
