@@ -42,7 +42,7 @@ async function main(){
           },
           legend: true
         },
-        //responsive: true,
+        responsive: true,
         scales: {
           "left": {
             position: "left",
@@ -99,7 +99,7 @@ async function main(){
           },
           legend: true
         },
-        //responsive: true,
+        responsive: true,
         scales: {
           "left": {
             position: "left",
@@ -170,7 +170,7 @@ async function main(){
           },
           legend: true
         },
-        //responsive: true,
+        responsive: true,
         scales: {
           "left": {
             position: "left",
@@ -226,7 +226,7 @@ async function main(){
           },
           legend: true
         },
-        //responsive: true,
+        responsive: true,
         scales: {
           "left": {
             position: "left",
