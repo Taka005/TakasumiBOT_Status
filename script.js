@@ -49,8 +49,8 @@ async function main(){
             type: "linear",
             max: 300,
             min: 100,
-            stepSize: 10,
             ticks: {
+              stepSize: 10,
               callback: (value)=>{
                 return `${value}ms`;
               }
@@ -106,8 +106,8 @@ async function main(){
             type: "linear",
             max: Math.max(...guild)+10,
             min: Math.min(...guild)-10,
-            stepSize: 10,
             ticks: {
+              stepSize: 10,
               callback: (value)=>{
                 return `${value}サーバー`;
               }
@@ -118,8 +118,8 @@ async function main(){
             type: "linear",
             max: Math.max(...user)+100,
             min: Math.min(...user)-100,
-            stepSize: 100,
             ticks: {
+              stepSize: 100,
               callback: (value)=>{
                 return `${value}人`;
               }
@@ -177,8 +177,8 @@ async function main(){
             type: "linear",
             suggestedMax: 300,
             min: 0,
-            stepSize: 10,
             ticks: {
+              stepSize: 10,
               callback: (value)=>{
                 return `${value}回`;
               }
@@ -233,8 +233,8 @@ async function main(){
             type: "linear",
             max: 100,
             min: 0,
-            stepSize: 10, 
             ticks: {
+              stepSize: 10,
               callback: (value)=>{
                 return `${value}%`;
               }
