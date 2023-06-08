@@ -50,7 +50,7 @@ async function main(){
           y: {
             display: true,
             suggestedMin: 100,
-            suggestedMax: 400,
+            suggestedMax: 300,
           },
           ticks: {
             stepSize: 10
@@ -170,7 +170,7 @@ async function main(){
   new Chart(document.getElementById("server"),{
     type: "line",
       data: {
-        labels: api.time,
+        labels: time,
         datasets: [
           {
             label: "CPU",
