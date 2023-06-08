@@ -71,7 +71,7 @@ async function main(){
             borderColor: "rgba(255,255,0)",
             borderWidth: 1,
             radius: 0,
-            yAxisID: "Left"
+            yAxisID: "left"
           },
           {
             label: "ユーザー",
@@ -80,7 +80,7 @@ async function main(){
             borderColor: "rgba(255,0,0)",
             borderWidth: 1,
             radius: 0,
-            yAxisID: "Right"
+            yAxisID: "right"
           }
         ]
       },
@@ -100,37 +100,33 @@ async function main(){
         },
         responsive: true,
         scales: {
-          yAxes: [
-            {
-              id: "Left",
-              position: "left",
-              type: "linear",
-              ticks: {
-                max: Math.max(...guild)+10,
-                min: Math.min(...guild)-10,
-                stepSize: 10,
-                callback: (value)=>{
-                  return `${value}サーバー`;
-                }
-              }
-            },
-            {
-              id: "Right",
-              position: "right",
-              type: "linear",
-              ticks: {
-                max: Math.max(...user)+100,
-                min: Math.min(...user)-100,
-                stepSize: 100,
-                callback: (value)=>{
-                  return `${value}人`;
-                }
-              },
-              gridLines: {
-                drawOnChartArea: false,
+          "left": {
+            position: "left",
+            type: "linear",
+            ticks: {
+              max: Math.max(...guild)+10,
+              min: Math.min(...guild)-10,
+              stepSize: 10,
+              callback: (value)=>{
+                return `${value}サーバー`;
               }
             }
-          ]
+          },
+          "right":{
+            position: "right",
+            type: "linear",
+            ticks: {
+              max: Math.max(...user)+100,
+              min: Math.min(...user)-100,
+              stepSize: 100,
+              callback: (value)=>{
+                return `${value}人`;
+              }
+            },
+            gridLines: {
+              drawOnChartArea: false,
+            }
+          }
         }
       }
   });
