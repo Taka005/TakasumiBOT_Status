@@ -250,10 +250,10 @@ window.setTimeout(()=>{
 function formatDate(date,format){
   return format
     .replace(/yyyy/g,date.getFullYear())
-    .replace(/MM/g,((date.getMonth() + 1)).slice(-2))
-    .replace(/dd/g,(date.getDate()).slice(-2))
-    .replace(/HH/g,(date.getHours()).slice(-2))
-    .replace(/mm/g,(date.getMinutes()).slice(-2))
-    .replace(/ss/g,(date.getSeconds()).slice(-2))
-    .replace(/SSS/g,(date.getMilliseconds()).slice(-3));
+    .replace(/MM/g,((date.getMonth()+1)))
+    .replace(/dd/g,(date.getDate()))
+    .replace(/HH/g,(date.getHours()))
+    .replace(/mm/g,(date.getMinutes()))
+    .replace(/ss/g,(date.getSeconds()))
+    .replace(/SSS/g,(date.getMilliseconds()));
 };
