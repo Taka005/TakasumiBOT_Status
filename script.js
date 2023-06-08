@@ -19,7 +19,7 @@ async function main(){
       data: {
         labels: time,
         datasets: [{
-          label: "Ping",
+          label: "Bot",
           data: ping,
           backgroundColor: "rgba(0,0,255)",
           borderColor: "rgba(0,0,255)",
