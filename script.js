@@ -25,6 +25,7 @@ async function main(){
           borderColor: "rgba(0,0,255)",
           borderWidth: 1,
           radius: 0,
+          yAxisID: "left"
         }]
       },
       options: {
@@ -42,20 +43,20 @@ async function main(){
           legend: true
         },
         responsive: true,
-        scale: {
-          x: {
-            display: true,
-            type: "linear"
-          },
-          y: {
-            display: true,
-            suggestedMin: 100,
-            suggestedMax: 300,
-          },
-          ticks: {
-            stepSize: 10
+        scales: {
+          "left": {
+            position: "left",
+            type: "linear",
+            ticks: {
+              max: 300,
+              min: 100,
+              stepSize: 10,
+              callback: (value)=>{
+                return `${value}ms`;
+              }
+            }
           }
-        },
+        }
       }
   });
 
@@ -142,7 +143,8 @@ async function main(){
           backgroundColor: "rgba(255,0,0)",
           borderColor: "rgba(255,0,0)",
           borderWidth: 1,
-          radius: 0
+          radius: 0,
+          yAxisID: "left"
         },
         {
           label: "コマンド",
@@ -150,7 +152,8 @@ async function main(){
           backgroundColor: "rgba(255,255,0)",
           borderColor: "rgba(255,255,0)",
           borderWidth: 1,
-          radius: 0
+          radius: 0,
+          yAxisID: "left"
         }]
       },
       options: {
@@ -168,20 +171,20 @@ async function main(){
           legend: true
         },
         responsive: true,
-        scale: {
-          x: {
-            display: true,
-            type: "linear"
-          },
-          y: {
-            display: true,
-            suggestedMin: 0,
-            suggestedMax: 300
-          },
-          ticks: {
-            stepSize: 10
+        scales: {
+          "left": {
+            position: "left",
+            type: "linear",
+            ticks: {
+              max: 300,
+              min: 0,
+              stepSize: 10,
+              callback: (value)=>{
+                return `${value}回`;
+              }
+            }
           }
-        },
+        }
       }
   });
 
@@ -196,7 +199,8 @@ async function main(){
             backgroundColor: "rgba(96,96,96)",
             borderColor: "rgba(96,96,96)",
             borderWidth: 1,
-            radius: 0
+            radius: 0,
+            yAxisID: "left"
           },
           {
             label: "メモリー",
@@ -204,7 +208,8 @@ async function main(){
             backgroundColor: "rgba(0,255,255)",
             borderColor: "rgba(0,255,255)",
             borderWidth: 1,
-            radius: 0
+            radius: 0,
+            yAxisID: "left"
           }]
       },
       options: {
@@ -222,20 +227,20 @@ async function main(){
           legend: true
         },
         responsive: true,
-        scale: {
-          x: {
-            display: true,
-            type: "linear"
-          },
-          y: {
-            display: true,
-            suggestedMin: 0,
-            suggestedMax: 100
-          },
-          ticks: {
-            stepSize: 10
+        scales: {
+          "left": {
+            position: "left",
+            type: "linear",
+            ticks: {
+              max: 100,
+              min: 0,
+              stepSize: 10,
+              callback: (value)=>{
+                return `${value}%`;
+              }
+            }
           }
-        },
+        }
       }
   });
 }
