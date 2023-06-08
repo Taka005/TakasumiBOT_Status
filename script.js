@@ -5,7 +5,7 @@ async function main(){
  
   console.log(res);
 
-  const time = res.data.map(data=>formatDate(new Data(data.time),"MM月dd日HH時"));
+  const time = res.data.map(data=>formatDate(new Date(data.time),"MM月dd日HH時"));
   const ping = res.data.map(data=>data.ping);
   const user = res.data.map(data=>data.user);
   const guild = res.data.map(data=>data.guild);
@@ -64,24 +64,25 @@ async function main(){
       data: {
         labels: time,
         datasets: [
-        {
-          label: "ユーザー",
-          data: user,
-          backgroundColor: "rgba(255,0,0)",
-          borderColor: "rgba(255,0,0)",
-          borderWidth: 1,
-          radius: 0,
-          yAxisID: "right"
-        },
-        {
-          label: "サーバー",
-          data: guild,
-          backgroundColor: "rgba(255,255,0)",
-          borderColor: "rgba(255,255,0)",
-          borderWidth: 1,
-          radius: 0,
-          yAxisID: "left"
-        }]
+          {
+            label: "サーバー",
+            data: guild,
+            backgroundColor: "rgba(255,255,0)",
+            borderColor: "rgba(255,255,0)",
+            borderWidth: 1,
+            radius: 0,
+            yAxisID: "left"
+          },
+          {
+            label: "ユーザー",
+            data: user,
+            backgroundColor: "rgba(255,0,0)",
+            borderColor: "rgba(255,0,0)",
+            borderWidth: 1,
+            radius: 0,
+            yAxisID: "right"
+          }
+        ]
       },
       options: {
         interaction: {
@@ -98,20 +99,37 @@ async function main(){
           legend: true
         },
         responsive: true,
-        scale: {
-          x: {
-            display: true,
-            type: "linear"
-          },
-          y: {
-            display: true,
-            suggestedMin: 0,
-            suggestedMax: 300
-          },
-          ticks: {
-            stepSize: 10
-          }
-        },
+        scales: {
+          yAxes: [
+            {
+              id: "left",
+              position: "left",
+              ticks: {
+                suggestedMax: Math.max(...guild)+10,
+                suggestedMin: Math.min(...guild)-10,
+                stepSize: 10,
+                callback: (value)=>{
+                  return `${value}サーバー`;
+                }
+              }
+            },
+            {
+              id: "right",
+              position: "right",
+              ticks: {
+                suggestedMax: Math.max(...user)+100,
+                suggestedMin: Math.min(...user)-100,
+                stepSize: 100,
+                callback: (value)=>{
+                  return `${value}人`;
+                }
+              },
+              gridLines: {
+                drawOnChartArea: false,
+              },
+            }
+          ]
+        }
       }
   });
 
@@ -230,12 +248,12 @@ window.setTimeout(()=>{
 },3000);
 
 function formatDate(date,format){
-  format = format.replace(/yyyy/g,date.getFullYear());
-  format = format.replace(/MM/g,((date.getMonth() + 1)).slice(-2));
-  format = format.replace(/dd/g,(date.getDate()).slice(-2));
-  format = format.replace(/HH/g,(date.getHours()).slice(-2));
-  format = format.replace(/mm/g,(date.getMinutes()).slice(-2));
-  format = format.replace(/ss/g,(date.getSeconds()).slice(-2));
-  format = format.replace(/SSS/g,(date.getMilliseconds()).slice(-3));
-  return format;
+  return format
+    .replace(/yyyy/g,date.getFullYear())
+    .replace(/MM/g,((date.getMonth() + 1)).slice(-2))
+    .replace(/dd/g,(date.getDate()).slice(-2))
+    .replace(/HH/g,(date.getHours()).slice(-2))
+    .replace(/mm/g,(date.getMinutes()).slice(-2))
+    .replace(/ss/g,(date.getSeconds()).slice(-2))
+    .replace(/SSS/g,(date.getMilliseconds()).slice(-3));
 };
