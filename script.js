@@ -48,8 +48,8 @@ async function main(){
             position: "left",
             type: "linear",
             ticks: {
-              max: 300,
-              min: 100,
+              suggestedMax: 300,
+              suggestedMin: 100,
               stepSize: 10,
               callback: (value)=>{
                 return `${value}ms`;
@@ -105,8 +105,8 @@ async function main(){
             position: "left",
             type: "linear",
             ticks: {
-              max: Math.max(...guild)+10,
-              min: Math.min(...guild)-10,
+              suggestedMax: Math.max(...guild)+10,
+              suggestedMin: Math.min(...guild)-10,
               stepSize: 10,
               callback: (value)=>{
                 return `${value}サーバー`;
@@ -117,8 +117,8 @@ async function main(){
             position: "right",
             type: "linear",
             ticks: {
-              max: Math.max(...user)+100,
-              min: Math.min(...user)-100,
+              suggestedMax: Math.max(...user)+100,
+              suggestedMin: Math.min(...user)-100,
               stepSize: 100,
               callback: (value)=>{
                 return `${value}人`;
@@ -176,8 +176,8 @@ async function main(){
             position: "left",
             type: "linear",
             ticks: {
-              max: 300,
-              min: 0,
+              suggestedMax: 300,
+              suggestedMin: 0,
               stepSize: 10,
               callback: (value)=>{
                 return `${value}回`;
@@ -232,8 +232,8 @@ async function main(){
             position: "left",
             type: "linear",
             ticks: {
-              max: 100,
-              min: 0,
+              suggestedMax: 100,
+              suggestedMin: 0,
               stepSize: 10,
               callback: (value)=>{
                 return `${value}%`;
