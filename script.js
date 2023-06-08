@@ -255,8 +255,5 @@ function formatDate(date,format){
     .replace(/yyyy/g,date.getFullYear())
     .replace(/MM/g,((date.getMonth()+1)))
     .replace(/dd/g,(date.getDate()))
-    .replace(/HH/g,(date.getHours()))
-    .replace(/mm/g,(date.getminutes()))
-    .replace(/ss/g,(date.getSeconds()))
-    .replace(/SSS/g,(date.getMilliseconds()));
+    .replace(/HH/g,(date.getHours()));
 };
