@@ -71,7 +71,7 @@ async function main(){
             borderColor: "rgba(255,255,0)",
             borderWidth: 1,
             radius: 0,
-            yAxisID: "left"
+            yAxisID: "Left"
           },
           {
             label: "ユーザー",
@@ -80,7 +80,7 @@ async function main(){
             borderColor: "rgba(255,0,0)",
             borderWidth: 1,
             radius: 0,
-            yAxisID: "right"
+            yAxisID: "Right"
           }
         ]
       },
@@ -102,11 +102,12 @@ async function main(){
         scales: {
           yAxes: [
             {
-              id: "left",
+              id: "Left",
               position: "left",
+              type: "linear",
               ticks: {
-                suggestedMax: Math.max(...guild)+10,
-                suggestedMin: Math.min(...guild)-10,
+                max: Math.max(...guild)+10,
+                min: Math.min(...guild)-10,
                 stepSize: 10,
                 callback: (value)=>{
                   return `${value}サーバー`;
@@ -114,11 +115,12 @@ async function main(){
               }
             },
             {
-              id: "right",
+              id: "Right",
               position: "right",
+              type: "linear",
               ticks: {
-                suggestedMax: Math.max(...user)+100,
-                suggestedMin: Math.min(...user)-100,
+                max: Math.max(...user)+100,
+                min: Math.min(...user)-100,
                 stepSize: 100,
                 callback: (value)=>{
                   return `${value}人`;
@@ -126,7 +128,7 @@ async function main(){
               },
               gridLines: {
                 drawOnChartArea: false,
-              },
+              }
             }
           ]
         }
