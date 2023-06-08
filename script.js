@@ -35,7 +35,7 @@ async function main(){
         plugins: {
           title: {
             display: true,
-            text: "Ping(通信速度)",
+            text: "通信速度",
             font: {
               size: 20
             }
@@ -44,7 +44,7 @@ async function main(){
         },
         responsive: true,
         scales: {
-          "left": {
+          left: {
             position: "left",
             type: "linear",
             ticks: {
@@ -101,7 +101,7 @@ async function main(){
         },
         responsive: true,
         scales: {
-          "left": {
+          left: {
             position: "left",
             type: "linear",
             ticks: {
@@ -113,7 +113,7 @@ async function main(){
               }
             }
           },
-          "right":{
+          right:{
             position: "right",
             type: "linear",
             ticks: {
@@ -172,7 +172,7 @@ async function main(){
         },
         responsive: true,
         scales: {
-          "left": {
+          left: {
             position: "left",
             type: "linear",
             ticks: {
@@ -228,7 +228,7 @@ async function main(){
         },
         responsive: true,
         scales: {
-          "left": {
+          left: {
             position: "left",
             type: "linear",
             ticks: {
