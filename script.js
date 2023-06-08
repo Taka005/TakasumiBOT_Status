@@ -47,10 +47,10 @@ async function main(){
           left: {
             position: "left",
             type: "linear",
+            max: 300,
+            min: 100,
+            stepSize: 10,
             ticks: {
-              suggestedMax: 300,
-              suggestedMin: 100,
-              stepSize: 10,
               callback: (value)=>{
                 return `${value}ms`;
               }
@@ -104,10 +104,10 @@ async function main(){
           left: {
             position: "left",
             type: "linear",
+            max: Math.max(...guild)+10,
+            min: Math.min(...guild)-10,
+            stepSize: 10,
             ticks: {
-              suggestedMax: Math.suggestedMax(...guild)+10,
-              suggestedMin: Math.suggestedMin(...guild)-10,
-              stepSize: 10,
               callback: (value)=>{
                 return `${value}サーバー`;
               }
@@ -116,10 +116,10 @@ async function main(){
           right:{
             position: "right",
             type: "linear",
+            max: Math.max(...user)+100,
+            min: Math.min(...user)-100,
+            stepSize: 100,
             ticks: {
-              suggestedMax: Math.suggestedMax(...user)+100,
-              suggestedMin: Math.suggestedMin(...user)-100,
-              stepSize: 100,
               callback: (value)=>{
                 return `${value}人`;
               }
@@ -175,10 +175,10 @@ async function main(){
           left: {
             position: "left",
             type: "linear",
+            suggestedMax: 300,
+            min: 0,
+            stepSize: 10,
             ticks: {
-              suggestedMax: 300,
-              suggestedMin: 0,
-              stepSize: 10,
               callback: (value)=>{
                 return `${value}回`;
               }
@@ -231,10 +231,10 @@ async function main(){
           left: {
             position: "left",
             type: "linear",
+            max: 100,
+            min: 0,
+            stepSize: 10, 
             ticks: {
-              suggestedMax: 100,
-              suggestedMin: 0,
-              stepSize: 10,
               callback: (value)=>{
                 return `${value}%`;
               }
@@ -256,7 +256,7 @@ function formatDate(date,format){
     .replace(/MM/g,((date.getMonth()+1)))
     .replace(/dd/g,(date.getDate()))
     .replace(/HH/g,(date.getHours()))
-    .replace(/mm/g,(date.getsuggestedMinutes()))
+    .replace(/mm/g,(date.getminutes()))
     .replace(/ss/g,(date.getSeconds()))
     .replace(/SSS/g,(date.getMilliseconds()));
 };
