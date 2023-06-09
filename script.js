@@ -104,8 +104,8 @@ async function main(){
           left: {
             position: "left",
             type: "linear",
-            max: Math.max(...guild)+10,
-            min: Math.min(...guild)-10,
+            max: Math.max(...guild)+50,
+            min: Math.min(...guild)-50,
             ticks: {
               stepSize: 10,
               callback: (value)=>{
@@ -116,8 +116,8 @@ async function main(){
           right:{
             position: "right",
             type: "linear",
-            max: Math.max(...user)+100,
-            min: Math.min(...user)-100,
+            max: Math.max(...user)+1000,
+            min: Math.min(...user)-1000,
             ticks: {
               stepSize: 100,
               callback: (value)=>{
@@ -140,8 +140,8 @@ async function main(){
         {
           label: "メッセージ",
           data: message,
-          backgroundColor: "rgba(255,0,0)",
-          borderColor: "rgba(255,0,0)",
+          backgroundColor: "rgba(255,165,0)",
+          borderColor: "rgba(255,165,0)",
           borderWidth: 1,
           radius: 0,
           yAxisID: "left"
@@ -149,11 +149,11 @@ async function main(){
         {
           label: "コマンド",
           data: command,
-          backgroundColor: "rgba(255,255,0)",
-          borderColor: "rgba(255,255,0)",
+          backgroundColor: "rgba(0,255,0)",
+          borderColor: "rgba(0,255,0)",
           borderWidth: 1,
           radius: 0,
-          yAxisID: "left"
+          yAxisID: "right"
         }]
       },
       options: {
@@ -175,8 +175,28 @@ async function main(){
           left: {
             position: "left",
             type: "linear",
-            suggestedMax: 500,
+            max: Math.max(...message)+500,
             min: 0,
+            title: {
+              display: true,
+              text: "メッセージ"
+            },
+            ticks: {
+              stepSize: 10,
+              callback: (value)=>{
+                return `${value}回`;
+              }
+            }
+          },
+          right: {
+            position: "right",
+            type: "linear",
+            max: Math.max(...command)+500,
+            min: 0,
+            title: {
+              display: true,
+              text: "コマンド"
+            },
             ticks: {
               stepSize: 10,
               callback: (value)=>{
