@@ -175,7 +175,7 @@ async function main(){
           left: {
             position: "left",
             type: "linear",
-            suggestedMax: 300,
+            suggestedMax: 500,
             min: 0,
             ticks: {
               stepSize: 10,
