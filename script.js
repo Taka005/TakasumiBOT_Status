@@ -202,6 +202,9 @@ async function main(){
               callback: (value)=>{
                 return `${value}回`;
               }
+            },
+            grid: {
+              drawOnChartArea: false,
             }
           }
         }
