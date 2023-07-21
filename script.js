@@ -1,5 +1,5 @@
 async function main(){
-  const api = await fetch("https://api.taka.ml/v1/date")
+  const api = await fetch("https://api.taka.cf/v1/date")
     .then(res=>res.json())
     .catch(()=>console.log("Fetch Error"))
 
