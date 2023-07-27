@@ -8,6 +8,7 @@ async function main(){
   const time = res.data.map(data=>formatDate(new Date(data.time),"MM月dd日HH時"));
   const ping = res.data.map(data=>data.ping);
   const user = res.data.map(data=>data.user);
+  const online = res.data.map(data=>data.online);
   const guild = res.data.map(data=>data.guild);
   const message = res.data.map(data=>data.message);
   const command = res.data.map(data=>data.command);
@@ -82,6 +83,15 @@ async function main(){
             borderWidth: 1,
             radius: 0,
             yAxisID: "right"
+          },
+          {
+            label: "オンライン",
+            data: online,
+            backgroundColor: "rgba(255,165,0)",
+            borderColor: "rgba(255,165,0)",
+            borderWidth: 1,
+            radius: 0,
+            yAxisID: "right"
           }
         ]
       },
@@ -92,7 +102,7 @@ async function main(){
         plugins: {
           title: {
             display: true,
-            text: "利用者数、導入数",
+            text: "利用者数(オンライン数)、導入数",
             font: {
               size: 20
             }
