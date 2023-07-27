@@ -127,7 +127,7 @@ async function main(){
             position: "right",
             type: "linear",
             max: Math.max(...user)+1000,
-            min: Math.min(...user)-1000,
+            min: Math.min(...online)-1000,
             ticks: {
               stepSize: 100,
               callback: (value)=>{
