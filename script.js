@@ -126,7 +126,6 @@ async function main(){
           right:{
             position: "right",
             type: "linear",
-            max: Math.max(...user)+1000,
             ticks: {
               stepSize: 100,
               callback: (value)=>{
